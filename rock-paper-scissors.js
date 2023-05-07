@@ -40,13 +40,14 @@ function singleRound(playerChoice, compChoice) {
 
 
 function fullGame() {
-    playSwitch = 'play'
-    let playerChoice = prompt('Please Choose Either Rock, Paper, or Scissors');
-    playerChoice = playerChoice.toLowerCase();
-    compChoice = getComputerChoice();
-    console.log(singleRound(playerChoice, compChoice));
-    let playSwitch = prompt('Type play if you want to play again or quit if youre done');
-    console.log(playSwitch)
+    let playSwitch = 'play'
+    while (playSwitch == 'play') {
+        let playerChoice = prompt('Please Choose Either Rock, Paper, or Scissors');
+        playerChoice = playerChoice.toLowerCase();
+        compChoice = getComputerChoice();
+        console.log(singleRound(playerChoice, compChoice));
+        playSwitch = prompt('Type play if you want to play again or quit if youre done').toLowerCase();
+    }
 }
 
 
